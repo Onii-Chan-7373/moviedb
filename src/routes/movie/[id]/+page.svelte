@@ -17,7 +17,7 @@
 
 <div class="movie-details" in:fly={{y: 50, duration: 500, delay: 500}} out:fly={{duration: 300}}>
     <div class="arrow-container">
-        <i on:click={goto(previousPage)} on:keyup={null} class="bi-arrow-left" style="margin-bottom: 10px; cursor: pointer;"></i>
+        <i on:click={goto(previousPage)} on:keyup={null} class="bi-arrow-left"></i>
     </div>
     <div class="img-container">
         <img src={'https://image.tmdb.org/t/p/original' + details.backdrop_path} alt={details.title}>
@@ -57,5 +57,17 @@
     }
     span {
         font-weight: bold;
+    }
+    .arrow-container {
+        cursor: pointer;
+        transition: all ease-in-out .3s;
+        padding: 0px 5px;
+        width: fit-content;
+        border-radius: 60px;
+        margin-bottom: 20px;
+    }
+    .arrow-container:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
     }
 </style>
