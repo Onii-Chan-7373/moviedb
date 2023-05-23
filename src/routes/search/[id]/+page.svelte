@@ -1,15 +1,21 @@
 <script>
     import MovieCard from '../../../components/MovieCard.svelte';
+    import { fly } from 'svelte/transition';
+    import SearchMovies from '../../../components/SearchMovies.svelte';
+    import { page } from '$app/stores';
 
     export let data;
     let results = data.results;
-    
+    let searched = $page.params.id;
 </script>
-
-<div class="searched-movies">
-    {#each results as movie}
-        <MovieCard {movie} />
-    {/each}
+<SearchMovies />
+<div in:fly={{y: 50, duration: 500, delay: 500}} out:fly={{duration: 300}}>
+    <h1>Results for {searched}</h1>
+    <div class="searched-movies" >
+        {#each results as movie}
+            <MovieCard {movie} />
+        {/each}
+    </div>
 </div>
 
 <style>
