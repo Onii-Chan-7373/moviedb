@@ -1,20 +1,26 @@
 <script>
     import { goto } from '$app/navigation'
     export let movie;
+
+    let imageUrl = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
+
 </script>
 
 <div class="movie-card">
     <a data-sveltekit-preload-data data-sveltekit-noscroll href={'/movie/' + movie.id}>
-        <img src={'https://image.tmdb.org/t/p/w500' + movie.poster_path} alt={movie.title}>
+        {#if movie.poster_path}
+            <img src={imageUrl} alt={movie.title}>
+        {:else}
+            <p class="noImage">No Image</p>
+        {/if}
     </a>
     <div class="description" on:click={goto('/movie/' + movie.id)} on:keyup={null}>
         <h2>{movie.title}</h2>
-        <p>{movie.release_date}</p>
     </div>
 </div>
 
 <style>
-    img{
+    img, .noImage{
         width: auto;
         height: 30vh;
         object-fit: contain;
@@ -42,13 +48,22 @@
         padding: 1rem;
     }
 
-    .movie-card:hover > a > img {
+    .movie-card:hover a :is(img, .noImage) {
         transform: translate(-2%, -2%);
         box-shadow: rgba(0, 0, 0, 0.3) 10px 10px 5px;
     }
 
     .movie-card:hover > .description {
         text-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px;
+    }
+
+    .noImage {
+        width: 160px;
+        height: 250px;
+        background-color: grey;
+        color: white;
+        text-align: center;
+        align-self: center;
     }
 
 </style>

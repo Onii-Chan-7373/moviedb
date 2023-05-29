@@ -6,15 +6,23 @@
 
     export let data;
     let results = data.results;
-    let searched = $page.params.id;
+    $: searched = $page.params.id;
+
+    $: data, (() => {
+        results = data.results;
+        results = results;
+        console.log(data);
+    })();
 </script>
 <SearchMovies />
 <div in:fly={{y: 50, duration: 500, delay: 500}} out:fly={{duration: 300}}>
     <h1>Results for {searched}</h1>
     <div class="searched-movies" >
-        {#each results as movie}
-            <MovieCard {movie} />
-        {/each}
+        {#key results}
+            {#each results as movie}
+                <MovieCard {movie} />
+            {/each}
+        {/key}
     </div>
 </div>
 

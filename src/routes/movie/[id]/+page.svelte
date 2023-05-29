@@ -20,7 +20,9 @@
         <i on:click={goto(previousPage)} on:keyup={null} class="bi-arrow-left"></i>
     </div>
     <div class="img-container">
-        <img src={'https://image.tmdb.org/t/p/original' + details.backdrop_path} alt={details.title}>
+        {#if details.backdrop_path}
+            <img src={'https://image.tmdb.org/t/p/original' + details.backdrop_path} alt={details.title}>
+        {/if}
     </div>
     <div class="text-container">
         <h1>{details.title}</h1>
