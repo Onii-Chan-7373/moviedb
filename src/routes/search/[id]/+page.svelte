@@ -11,7 +11,6 @@
     $: data, (() => {
         results = data.results;
         results = results;
-        console.log(data);
     })();
 </script>
 <SearchMovies />

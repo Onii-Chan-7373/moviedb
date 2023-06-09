@@ -1,6 +1,17 @@
+<script>
+    import Sidemenu from "./Sidemenu.svelte";
+    let open = false;
+</script>
+
 <nav>
+    <i on:click={() => {
+        open = !open;
+    }} on:keyup
+    class="bi-list"></i>
     <a href="/">Movie Database</a>
 </nav>
+
+<Sidemenu bind:open/> 
 
 <style>
     nav {
@@ -26,5 +37,11 @@
     a:focus,
     a:active {
         background-size: 100% 0.2em;
+    }
+    i {
+        position: absolute;
+        top: 2vh;
+        left: 2vw;
+        transform: scale(2);
     }
 </style>
