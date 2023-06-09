@@ -4,11 +4,21 @@
 </script>
 
 <h3>Popular Movies</h3>
-<div class="popular-movies">
-    {#each movies as movie}
-         <MovieCard {movie}/>
-    {/each}
-</div>
+{#await movies}
+    <h1>Loading Popular Movies...</h1>
+{:then movies}
+    {#if movies}
+        <div class="popular-movies">
+            {#each movies as movie}
+                <MovieCard {movie}/>
+            {/each}
+        </div>
+    {:else}
+        <h1>Sometging went wrong while loading...</h1>
+    {/if}
+{:catch error}
+    <h1>Something went wrong while loading...</h1>
+{/await}
 
 <style>
     h3{
