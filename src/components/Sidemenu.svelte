@@ -5,12 +5,12 @@
 
 {#if open}
     <div class="menu-body" in:fly={{y: -10}} out:fly={{y: -10, delay: 160}}>
-        {#each ["Home", "Search", "About"] as item, i}
+        {#each ["home", "search", "about"] as item, i}
              <a 
-             href="/{item === 'Home' ? '' : item}"
+             href="/{item === 'home' ? '' : item}"
              in:fly={{y: -5, delay: 80 * (i + 1)}} 
              out:fly={{y: -5, delay: 80 / (i + 1)}}
-             >{item}</a> 
+             >{item.charAt(0).toUpperCase() + item.slice(1)}</a> 
              <br>
         {/each}
     </div>
