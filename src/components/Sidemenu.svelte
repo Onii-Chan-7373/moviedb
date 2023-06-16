@@ -24,6 +24,7 @@
         padding-top: 10px;
         padding-bottom: 10px;
         border: solid 3px grey;
+        border-radius: 20px;
     }
     a {
         margin: 20px;
