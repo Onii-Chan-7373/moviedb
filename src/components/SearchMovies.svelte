@@ -88,4 +88,16 @@
     input.selected {
         background: rgb(40, 40, 40);
     }
+
+    @media (max-width: 500px) {
+        .search {
+            width: 100%;
+            align-self: center;
+            justify-self: center;
+            margin-left: 0;
+        }
+        input {
+            padding: .3em 1em;
+        }
+    }
 </style>
