@@ -66,4 +66,11 @@
         align-self: center;
     }
 
+    @media (max-width: 500px) {
+        img, .noImage {
+            height: auto;
+            width: 30vw;
+        }
+    }
+
 </style>

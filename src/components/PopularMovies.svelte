@@ -31,4 +31,10 @@
         grid-column-gap: 1rem;
         grid-row-gap: 2rem;
     }
+
+    @media (max-width: 500px){
+        .popular-movies {
+            grid-template-columns: auto auto;
+        }
+    }
 </style>
