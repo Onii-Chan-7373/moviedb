@@ -22,6 +22,7 @@
 		min-height: 10vh;
 		align-items: center;
 		justify-content: center;
+		width: 80vw;
 	}
 	a {
 		font-size: 2rem;
@@ -46,5 +47,14 @@
 		top: 2vh;
 		left: 2vw;
 		transform: scale(2);
+	}
+
+	@media(max-width: 500px) {
+		a {
+			font-size: 1.5rem;
+		}
+		i {
+			transform: scale(1.5);
+		}
 	}
 </style>

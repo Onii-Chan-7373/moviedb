@@ -25,7 +25,6 @@
 		height: 30vh;
 		object-fit: contain;
 		border-radius: 1rem;
-		margin-bottom: 1rem;
 		transition: all ease-in-out 0.3s;
 		box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
 	}
@@ -45,7 +44,6 @@
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-		padding: 1rem;
 	}
 
 	.movie-card:hover a :is(img, .noImage) {
@@ -67,10 +65,14 @@
 	}
 
 	@media (max-width: 500px) {
-		img,
-		.noImage {
+		img, .noImage {
 			height: auto;
-			width: 30vw;
+			width: 26.66vw;
+		}
+		h2 {
+			/* font-size: 1rem; */
+			font-size: 10%;
+			text-align: center;
 		}
 	}
 </style>

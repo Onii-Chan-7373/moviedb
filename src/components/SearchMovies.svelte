@@ -95,7 +95,7 @@
 			width: 100%;
 			align-self: center;
 			justify-self: center;
-			margin-left: 0;
+			width: 100%;
 		}
 		input {
 			padding: 0.3em 1em;
