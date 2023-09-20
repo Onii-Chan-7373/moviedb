@@ -10,7 +10,9 @@
 		{#if movie.poster_path}
 			<img src={imageUrl} alt={movie.title} />
 		{:else}
-			<p class="noImage">No Image</p>
+			<div class="noImage">
+				<p>No Image</p>
+			</div>
 		{/if}
 	</a>
 	<div class="description" on:click={goto('/movie/' + movie.id)} on:keyup={null}>
@@ -67,6 +69,7 @@
 	@media (max-width: 500px) {
 		img, .noImage {
 			height: auto;
+			min-height: 23.5vh;
 			width: 26.66vw;
 		}
 		h2 {
