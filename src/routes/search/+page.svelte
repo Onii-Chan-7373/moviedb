@@ -1,5 +1,5 @@
 <script>
-    import SearchMovies from "../../components/SearchMovies.svelte";
+	import SearchMovies from '../../components/SearchMovies.svelte';
 </script>
 
 <SearchMovies />
