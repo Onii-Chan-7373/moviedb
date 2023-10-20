@@ -15,7 +15,7 @@
 				{/each}
 			</div>
 		{:else}
-			<h1>Sometging went wrong while loading...</h1>
+			<h1>Something went wrong while loading...</h1>
 		{/if}
 	{:catch error}
 		<h1>Something went wrong while loading...</h1>
