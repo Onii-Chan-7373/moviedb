@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "npm run dev -- --open --host",
+			"problemMatcher": [],
+			"label": "npm: dev",
+			"detail": "Run dev server, open in Browser and host to local network",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			}
+		}
+	]
+}
